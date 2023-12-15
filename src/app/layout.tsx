@@ -17,7 +17,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  // @ts-ignore
   return (
     <html lang="en">
       <UserProvider>
