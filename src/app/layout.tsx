@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import { UserProvider } from '@auth0/nextjs-auth0/client';
+
 import { Inter } from 'next/font/google'
 import TopMenu from './servermenu';
 import './globals.css'
@@ -18,10 +20,12 @@ export default function RootLayout({
   // @ts-ignore
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <TopMenu />
-        {children}
-      </body>
+      <UserProvider>
+        <body className={inter.className}>
+          <TopMenu />
+          {children}
+        </body>
+      </UserProvider>
     </html>
   )
 }

@@ -9,9 +9,8 @@ export default () => {
   const textFieldRef = useRef<HTMLInputElement>(null);
 
   async function handleCreate(formData: FormData) {
-    const author = formData.get('author') as string;
     const text = formData.get('text') as string;
-    const newPost = await createPost(author, text);
+    const newPost = await createPost(text);
     console.log(newPost);
     if (textFieldRef.current) {
       textFieldRef.current.value = '';
@@ -21,11 +20,6 @@ export default () => {
 
   return (
     <form action={handleCreate}>
-      <label>
-        Author: 
-        <input type="text" name="author" className="text-black"/>
-      </label>
-      
       <label>
         Text: 
         <input type="text" name="text" className="text-black" ref={textFieldRef} />
