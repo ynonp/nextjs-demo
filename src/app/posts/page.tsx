@@ -3,6 +3,7 @@ import NewPost from './newpost';
 const prisma = new PrismaClient()
 
 export default async function PostsPage() {
+  console.log('rendering posts page');
   const posts = await prisma.post.findMany();
 
   return (
