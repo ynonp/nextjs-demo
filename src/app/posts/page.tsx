@@ -2,6 +2,8 @@ import { PrismaClient } from '@prisma/client'
 import NewPost from './newpost';
 const prisma = new PrismaClient()
 
+export const revalidate = 0
+
 export default async function PostsPage() {
   console.log('rendering posts page');
   const posts = await prisma.post.findMany();
