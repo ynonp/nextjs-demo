@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Header from './header';
 
-export default () => {
+export default function Counter() {
   const [count, setCount] = useState(0);
   console.log('counter');
   return (

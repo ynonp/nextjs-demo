@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { createPost
  } from "../db/posts"
 
-export default () => {
+export default function NewPost() {
   const router = useRouter();
   const textFieldRef = useRef<HTMLInputElement>(null);
 

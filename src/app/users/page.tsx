@@ -1,7 +1,7 @@
 import ClientUser from './client_user';
 import ServerUser from './server_user';
 
-export default () => {
+export default function UsersPage() {
   return (
     <div>
       <h1>User Page</h1>

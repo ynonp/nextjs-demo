@@ -2,7 +2,7 @@ import { PrismaClient } from '@prisma/client'
 import NewPost from './newpost';
 const prisma = new PrismaClient()
 
-export default async () => {
+export default async function PostsPage() {
   const posts = await prisma.post.findMany();
 
   return (
@@ -10,7 +10,7 @@ export default async () => {
       <NewPost />
       <ul>
         {posts.map(post => (
-          <li><b>{post.author}</b> {post.text}</li>
+          <li key={post.id}><b>{post.author}</b> {post.text}</li>
         ))}
       </ul>
     </main>

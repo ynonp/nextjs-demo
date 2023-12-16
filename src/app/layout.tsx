@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { UserProvider } from '@auth0/nextjs-auth0/client';
 
 import { Inter } from 'next/font/google'
-import TopMenu from './servermenu';
+import TopMenu from './menu';
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })

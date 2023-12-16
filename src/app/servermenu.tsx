@@ -2,7 +2,7 @@ import { readdir } from 'node:fs/promises';
 import Link from 'next/link';
 import { existsSync } from 'node:fs';
 
-export default async () => {  
+export default async function ServerMenu() {  
   const pages = [
     {href: '/', text: 'home'},
     ...(await readdir('./src/app', { withFileTypes: true }))
@@ -16,7 +16,7 @@ export default async () => {
   return (
     <nav className='flex my-4 border-4 border-indigo-200 border-l-indigo-500'>
       {pages.map(page => (
-        <div className='flex-1 px-2'>
+        <div className='flex-1 px-2' key={page.href}>
           <Link href={page.href} >{page.text}</Link>
         </div>))}
     </nav>
