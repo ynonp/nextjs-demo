@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 
 
 export default function Menu<T extends string>({ items }: {
-  items: Array<{href: Route<T>, text: String}>
+  items: Array<{href: Route<T>, text: string}>
 }) {
   const pathname = usePathname()
   return (
